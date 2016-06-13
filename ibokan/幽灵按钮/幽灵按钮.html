@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>第三阶段综合测评</title>
+	<style>
+		*{margin: 0;padding: 0;list-style: none;}
+		body{
+			background: black;
+		}
+		.container{
+			width: 800px;
+		    height: 300px;
+		    position: absolute;
+		    top: 25%;
+		    left: 50%;
+		    margin-left: -400px;
+		}
+		.container ul{
+			width: 200px;
+			height: 300px;
+			margin-left: 50px;
+			float: left;
+			position: relative;
+		}
+		.container ul .btn{
+		    width: 170px;
+		    height: 40px;
+		    border: 2px solid #fff;
+		    position: relative;
+		    top: 69px;
+		    left: 11px;
+		}
+		.container ul .btn1{
+			width: 170px;
+		    height: 40px;
+		    border: 2px solid #fff;
+		    top: 44px;
+		    left: 11px;
+		}
+		.container ul .btn .font{
+			font-size: 20px;
+		    color: green;
+		    text-align: center;
+		    line-height: 40px;
+		    font-weight: bold;
+		    text-indent: 20px;
+		    display: inline-block;
+		}
+		.container ul .btn .jian{
+			width: 26px;
+		    height: 20px;
+		    background: url(allow.png) no-repeat;
+		    display: inline-block;
+		    position: absolute;
+		    top: 10px;
+		    left: 100px;
+		    transition:all 1s;
+		}
+		
+		.container ul .shuoming{
+			width: 240px;
+			height: 60px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			opacity: 0;
+    
+		}
+
+		.container ul .shuoming .wenzi{
+		    width: 235px;
+		    height: 50px;
+		    font-size: 20px;
+		    font-weight: bold;
+		    color: #fff;
+		    background: green;
+		    display: inline-block;
+		    border-radius: 15px;
+		    text-indent: 5px;
+		    line-height: 40px;
+		    position: absolute;
+		    top: 0px;
+		    left: 0px;
+		}
+		.container ul .shuoming .jiao{
+			width: 0px;
+		    height: 0px;
+		    border: 20px solid transparent;
+		    border-top: 10px solid green;
+		    display: inline-block;
+		    position: absolute;
+		    top: 50px;
+		    left: 100px;
+		}
+		.container ul img{
+			transform:rotate(0deg) scale(1);
+			transition:all 2s; 
+		}
+		
+		.container ul .l1{
+			border: 1px solid red;
+		    position: absolute;
+		    left: -300px;
+		    top: -2px;
+		    width: 170px;
+		    opacity: 0;
+		    z-index: 999;
+		    transition: 0.5s all ease-in-out;
+		}
+		
+		.container ul .t1{
+		    border: 1px solid red;
+		    position: absolute;
+		    top: -100px;
+		    left: -2px;
+		    height: 42px;
+		    opacity: 0;
+		    z-index: 999;
+		    transition: all 0.5s ease-in-out;
+		}
+		
+		.container ul .r1{
+			border: 1px solid red;
+		    position: absolute;
+		    top: 40px;
+		    left: 300px;
+		    width: 170px;
+		    opacity: 0;
+		    z-index: 999;
+		    transition: all 0.5s ease-in-out;
+		}
+		
+		.container ul .b1{
+		    border: 1px solid red;
+		    position: absolute;
+		    height: 0px;
+		    top: 200px;
+		    left: 170px;
+		    height: 42px;
+		    opacity: 0;
+		    z-index: 999;
+		    transition: all 0.5s ease-in-out;
+		}
+		
+		@keyframes fadeIn{
+			0%{left:-20px;top:100px;opacity: 0;}
+			100%{left:-20px;top:156px;opacity: 1;}
+		}
+		@keyframes fadeOut{
+			0%{left:-20px;top:156px;opacity: 1;}
+			100%{left:-20px;top:100px;opacity: 0;}
+		}
+		.container ul img:hover{
+			transform:rotate(360deg) scale(1.5);;
+		}
+		.container ul .btn:hover .l1{
+			left: -1px;top: -2px; width: 170px;opacity: 1;
+		}
+		.container ul .btn:hover .t1{
+			 top: -2px;left: -2px;height: 42px;opacity: 1;
+		}
+		.container ul .btn:hover .r1{
+			top: 40px;left: -1px;opacity: 1;
+		}
+		.container ul .btn:hover .b1{
+		    top: -2px;left: 170px;opacity: 1;
+		}
+		.container ul .btn:hover .jian{
+			top: 10px;left: 135px;}
+		}
+	</style>
+</head>
+<body>
+	<div class="container" id="container">
+		<ul >
+			<li>
+				<img src="mission.png" alt="">
+			</li>
+			<li class="shuoming">
+				<span class="wenzi">This is my background</span>
+				 <span class="jiao"></span>
+			</li>
+			
+			<li class="btn">
+				<p class="l1"></p>
+				<p class="t1"></p>
+				<p class="r1"></p>
+				<p class="b1"></p>
+				<span class="font">MISSION</span>
+				<span class="jian"></span>
+			</li>
+		</ul>
+		<ul >
+			<li>
+				<img src="play.png" alt="">
+			</li>
+			<li class="shuoming">
+				<span class="wenzi">This is my background</span>
+				 <span class="jiao"></span>
+			</li>
+			
+			<li class="btn">
+				<p class="l1"></p>
+				<p class="t1"></p>
+				<p class="r1"></p>
+				<p class="b1"></p>
+				<span class="font">PLAY</span>
+				<span class="jian"></span>
+			</li>
+		</ul>
+		<ul >
+			<li>
+				<img src="touch.png" alt="">
+			</li>
+			<li class="shuoming">
+				<span class="wenzi">This is my background</span>
+				 <span class="jiao"></span>
+			</li>
+			<li class="btn btn1">
+				<p class="l1"></p>
+				<p class="t1"></p>
+				<p class="r1"></p>
+				<p class="b1"></p>
+				<span class="font">TOUCH</span>
+				<span class="jian"></span>
+			</li>
+		</ul>
+	</div>
+	 <script>
+	var btns=document.querySelectorAll(".btn");
+	var jie=document.querySelectorAll(".shuoming");
+	for (var i = 0; i < btns.length; i++) {
+		btns[i].onmouseover=function(){
+			for (var i = 0; i < btns.length; i++) {
+				jie[i].style.animation="";
+				if (this==btns[i]) {
+					jie[i].style.animation="fadeIn 1s ease-in-out forwards";
+				};
+			};
+		}
+		btns[i].onmouseout=function(){
+			for (var i = 0; i < btns.length; i++) {
+				jie[i].style.animation="";
+				if (this==btns[i]) {
+					jie[i].style.animation="fadeOut 1s ease-in-out forwards";
+				};
+			};
+		}
+	};
+	</script>
+</body>
+</html>

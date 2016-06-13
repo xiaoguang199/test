@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>移动端刮刮卡--百分比版</title>
+	<meta name="viewport" content="width=divice-width,initial-scale=1.0,user-scaleable=0">
+	<style>
+	*{margin: 0;padding: 0;}
+	html,body{
+		height: 100%;
+	}
+	.container{
+		width: 100%;
+		height: 100%;
+		background: url(bg.jpg) no-repeat;
+		background-size: 100% 100%;
+	}
+	.container .tuceng{
+		width: 200px;
+	    height: 35px;
+	    position:absolute;
+	    top: 71%;
+	    left: 50%;
+	    margin-left: -100px;
+	    line-height: 35px;
+	    color: #fff;
+	    text-align: center;
+	    background: #f60;
+	}
+	#myCanvas{
+	  position: absolute;
+   	  top: 71%;
+	 left: 50%;
+     margin-left: -100px;
+	}		
+	.container ul{
+		width: 640px;
+	    height: 100px;
+	    position: absolute;
+	    top: 79%;
+	    left: 50%;
+	    margin-left: -320px;
+	    overflow: hidden;
+	}
+	.container ul li{
+		width: 100px;
+		height: 100px;
+		float: left;
+		list-style: none;
+	}
+	.container ul li:nth-child(1){
+		background:url(jp_03.png) no-repeat;
+		background-size: 100% 100%;
+	    margin-left: 25%;
+	}
+	.container ul li:nth-child(2){
+		background:url(jp_05.png) no-repeat;
+		background-size: 100% 100%;
+	    margin-left: 2%;
+	}
+	.container ul li:nth-child(3){
+		background:url(jp_07.png) no-repeat;
+		background-size: 100% 100%;
+	    margin-left: 2%;
+	}	
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="tuceng" id="jiang"></div>
+		<canvas id="myCanvas" width="200" height="35"></canvas>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<script>
+	document.addEventListener("touchmove",function(e){
+		e.preventDefault();
+	},false);
+	var arr=["一等奖","二等奖","三等奖","谢谢惠顾","劳斯莱斯","柯尼塞格","路虎"]
+	var jiang=document.getElementById('jiang');
+	var a=Math.floor(Math.random()*7);
+	console.log(a)
+		 jiang.innerHTML=arr[a];
+	var cvs=document.getElementById('myCanvas').getContext("2d");
+	var canvas=document.getElementById('myCanvas');
+	cvs.beginPath();
+	cvs.fillStyle="gray";
+	cvs.fillRect(0,0,200,35);
+	cvs.fill();
+	cvs.closePath();
+	document.addEventListener("touchmove",function(e){
+		var x=e.touches[0].clientX-canvas.offsetLeft;
+		var y=e.touches[0].clientY-canvas.offsetTop;
+		console.log(x,y);
+		cvs.beginPath();
+		cvs.globalCompositeOperation = "destination-out";
+		cvs.arc(x,y,5,0,Math.PI*2,false);
+		cvs.fill();
+		cvs.closePath();
+	},false)
+	</script>
+</body>
+</html>

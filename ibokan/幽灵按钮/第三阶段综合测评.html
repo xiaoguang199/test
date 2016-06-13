@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>第三阶段综合测评</title>
+	<style>
+		*{margin: 0;padding: 0;list-style: none;}
+		body{
+			background: black;
+		}
+		.container{
+			width: 800px;
+		    height: 300px;
+		    position: absolute;
+		    top: 25%;
+		    left: 50%;
+		    margin-left: -400px;
+		}
+		.container ul{
+			width: 200px;
+			height: 300px;
+			margin-left: 50px;
+			/*background: gray;*/
+			float: left;
+			position: relative;
+		}
+		.container ul .btn{
+			    width: 170px;
+			    height: 40px;
+			    border: 2px solid #fff;
+			   
+			    position: relative;
+			    top: 69px;
+			    left: 11px;
+		}
+		.container ul .btn1{
+			width: 170px;
+		    height: 40px;
+		    border: 2px solid #fff;
+		    /* margin: 14px auto 0px; */
+		    top: 44px;
+		    left: 11px;
+		}
+		.container ul .btn .font{
+			font-size: 20px;
+		    color: green;
+		    text-align: center;
+		    line-height: 40px;
+		    font-weight: bold;
+		    text-indent: 20px;
+		    display: inline-block;
+		}
+		.container ul .btn .jian{
+			width: 26px;
+		    height: 20px;
+		    background: url(allow.png) no-repeat;
+		    display: inline-block;
+		    position: absolute;
+		    top: 10px;
+		    left: 100px;
+		}
+		@keyframes allow{
+			0%{top:10px;left:100px;}
+			100%{top: 10px;left: 135px;}
+		}
+		@keyframes allow1{
+			0%{top: 10px;left: 135px;}
+			100%{top:10px;left:100px;}
+			
+		}
+		.container ul .shuoming{
+			width: 240px;
+		    height: 60px;
+		    position: absolute;
+		    top: 100px;
+		    left: -20px;
+		    opacity: 0;
+		    z-index: -55;
+		    transition:all 2s ease-in-out;
+		}
+		.container ul .shuoming .wenzi{
+		    width: 235px;
+		    height: 50px;
+		    /*border: 1px solid red;*/
+		    font-size: 20px;
+		    font-weight: bold;
+		    color: #fff;
+		    background: green;
+		    display: inline-block;
+		    border-top-left-radius: 15px;
+		    border-top-right-radius: 15px;
+		    border-bottom-right-radius: 15px;
+		    border-bottom-left-radius: 15px;
+		    text-indent: 5px;
+		    line-height: 40px;
+		    position: absolute;
+		    top: 0px;
+		    left: 0px;
+		}
+		.container ul .shuoming .jiao{
+			width: 0px;
+		    height: 0px;
+		    border: 20px solid transparent;
+		    border-top: 10px solid green;
+		    display: inline-block;
+		    position: absolute;
+		    top: 50px;
+		    left: 100px;
+		}
+		
+		@keyframes rotate{
+			0%{transform: rotateZ(0deg) scale(1);}
+			50%{transform:rotateZ(360deg) scale(1.5);}
+			100%{transform:rotateZ(360deg) scale(1);}
+		}
+		/*#container img:hover{
+			animation:rotate 2s ease-in-out;
+		}*/
+		/*测试用的*/
+		.container ul .l1{
+			border: 1px solid red;
+		    position: absolute;
+		    width: 0px;
+		   left: -100px;top: 227px;opacity: 0;
+		    z-index: 999;
+		    transition:2s all ease-in-out;
+		}
+		.container ul .t1{
+			border: 1px solid red;
+		    position: absolute;
+		    /* width: 167px; */
+		    height: 0px;
+		   top: 100px;left: 11px;opacity: 0;
+		    z-index: 999;
+		    transition:all 1s ease-in-out;
+		}
+		.container ul .r1{
+			border: 1px solid red;
+		    position: absolute;
+		    width: 0px;
+		   top: 269px;left: 50px;opacity: 0;
+		    z-index: 999;
+		    transition:all 1s ease-in-out;
+		}
+		.container ul .b1{
+			border: 1px solid red;
+		    position: absolute;
+		    /* width: 167px; */
+		    height: 0px;
+		    top: 260px;left: 183px;opacity: 0;
+		    z-index: 999;
+		    transition:all 1s ease-in-out;
+		}
+		/**/
+		@keyframes fadeIn{
+			0%{left:-20px;top:100px;opacity: 0;}
+			100%{left:-20px;top:156px;opacity: 1;}
+		}
+		@keyframes fadeOut{
+			0%{left:-20px;top:156px;opacity: 1;}
+			100%{left:-20px;top:100px;opacity: 0;}
+			
+		}
+		@keyframes left{
+			0%{left: -200px;top: 227px;width: 0px;opacity: 0;}
+			100%{left: 13px;top: 227px;width: 170px;opacity: 1;}
+		}
+		@keyframes top{
+			0%{top: -100px;left: 11px;height: 0px;opacity: 0;}
+			100%{top: 227px;left: 11px;height: 40px;opacity: 1;}
+		}
+		@keyframes right{
+			0%{top: 269px;left: 300px;width: 0px;opacity: 0;}
+			100%{ top: 269px;left: 11px;width: 170px;opacity: 1;}
+		}
+		@keyframes bottom{
+			0%{top: 300.5px;left: 183px;height: 0px;opacity: 0;}
+			100%{ top: 227px;left: 183px;height: 42px;opacity: 1;}
+		}
+		@keyframes left1{
+			0%{left: 13px;top: 227px;width: 170px;opacity: 1;}
+			100%{left: -200px;top: 227px;width: 0px;opacity: 0;}
+			
+		}
+		@keyframes top1{
+			0%{top: 227px;left: 11px;height: 40px;opacity: 1;}
+			100%{top: -100px;left: 11px;height: 0px;opacity: 0;}
+			
+		}
+		@keyframes right1{
+			0%{ top: 269px;left: 11px;width: 170px;opacity: 1;}
+			100%{top: 269px;left: 300px;width: 0px;opacity: 0;}
+			
+		}
+		@keyframes bottom1{
+			0%{ top: 227px;left: 183px;height: 42px;opacity: 1;}
+			100%{top: 300.5px;left: 183px;height: 0px;opacity: 0;}
+			
+		}
+	</style>
+</head>
+<body>
+	<div class="container" id="container">
+		<ul id="a1">
+			<li>
+				<img src="mission.png" alt="">
+			</li>
+			<li class="shuoming">
+				<span class="wenzi">This is my background</span>
+				 <span class="jiao"></span>
+			</li>
+			<p class="l1"></p>
+			<p class="t1"></p>
+			<p class="r1"></p>
+			<p class="b1"></p>
+			<li class="btn">
+				<span class="font">MISSION</span>
+				<span class="jian"></span>
+			</li>
+		</ul>
+		<ul id="a2">
+			<li>
+				<img src="play.png" alt="">
+			</li>
+			<li class="shuoming">
+				<span class="wenzi">This is my background</span>
+				 <span class="jiao"></span>
+			</li>
+			<p class="l1"></p>
+			<p class="t1"></p>
+			<p class="r1"></p>
+			<p class="b1"></p>
+			<li class="btn">
+				<span class="font">PLAY</span>
+				<span class="jian"></span>
+			</li>
+		</ul>
+		<ul id="a3">
+			<li>
+				<img src="touch.png" alt="">
+			</li>
+			<li class="shuoming">
+				<span class="wenzi">This is my background</span>
+				 <span class="jiao"></span>
+			</li>
+			<p class="l1"></p>
+			<p class="t1"></p>
+			<p class="r1"></p>
+			<p class="b1"></p>
+			<li class="btn btn1">
+				<span class="font">TOUCH</span>
+				<span class="jian"></span>
+			</li>
+		</ul>
+	</div>
+	<script>
+	var imgs=document.getElementById('container').getElementsByTagName('img');
+	var btn=document.querySelectorAll(".btn");
+	var shuoming=document.querySelectorAll(".shuoming");
+	console.log(shuoming);
+	var jian=document.querySelectorAll(".jian");
+	var ps=document.querySelectorAll("p");
+	// logo部分
+	for (var i = 0; i <imgs.length; i++) {
+		imgs[i].onmouseenter=function(){
+			for (var i = 0; i <imgs.length; i++) {
+				imgs[i].style.animation="";
+				if (this==imgs[i]) {
+					imgs[i].style.animation="rotate 2s ease-in-out"
+				};
+			};
+		}
+		imgs[i].onmouseleave=function(){
+			for (var i = 0; i < imgs.length; i++) {
+				imgs[i].style.animation="";
+			};
+		}
+	};
+	// btn部分
+	for (var i = 0; i < btn.length; i++) {
+		btn[i].onmouseover=function(){
+			for (var i = 0; i < btn.length; i++) {
+				shuoming[i].style.animation="";
+				jian[i].style.animation="";
+				if (this==btn[i]) {
+					shuoming[i].style.animation="fadeIn 1s ease-in-out forwards";
+					jian[i].style.animation="allow 1s ease-in-out  forwards";
+					ps[i*4].style.animation="left 0.5s ease-in forwards";
+					ps[i*4+1].style.animation="top 0.5s ease-in forwards";
+					ps[i*4+2].style.animation="right 0.5s ease-in forwards";
+					ps[i*4+3].style.animation="bottom 0.5s ease-in forwards";
+				};
+			};
+		}
+		
+			
+		btn[i].onmouseleave=function(){
+			for (var i = 0; i < btn.length; i++) {
+				if(this==btn[i]){
+					shuoming[i].style.animation="fadeOut 1s ease-in-out forwards";
+					jian[i].style.animation="allow1 1s ease-in-out  forwards";
+					ps[i*4].style.animation="left1 0.5s ease-in forwards";
+					ps[i*4+1].style.animation="top1 0.5s ease-in forwards";
+					ps[i*4+2].style.animation="right1 0.5s ease-in forwards";
+					ps[i*4+3].style.animation="bottom1 0.5s ease-in forwards";
+				}	
+			};	
+		}
+	};
+	</script>
+</body>
+</html>
